@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6{
+    text-transform: uppercase;
+    font-family: "GodOfWar";
+}
+
+p, button, a{
+    font-family: "Poppins";
+}
+
+body{
+    background-color: #1d1e31;
+}
+
+/*NAVBAR*/
+
+.navbar{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .container{
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.navbar .container a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar .container a:hover{
+    color: #fec675;
+}
+
+.navbar .container .active{
+    color: #eebf7d;
+}
+
+@media (max-width: 750px) {
+    .navbar .container a{
+        font-size: 0.8em;
+    }
+    .navbar .container img{
+        width: 50px;
+    }
+}
+
+/*SEC1*/
+
+.sec1{
+    margin-top: 50px;
+}
+
+.sec1 .container{
+    display: flex;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.sec1 .container .left h1{
+    font-size: 8em;
+    color: white;
+    text-shadow: 0px 0px 8px #fff;
+}
+
+.sec1 .container .left p{
+    color: #888;
+    max-width: 600px;
+    font-weight: bold;
+    margin: 40px 0;
+}
+
+.sec1 .container .left button{
+    width: 300px;
+    height: 60px;
+    border-radius: 15px;
+    border: none;
+    color: #2c2534;
+    font-size: 1.1em;
+    font-weight: 900;
+    background-color: #fec675;
+    box-shadow: 0px 0px 10px #fec675;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.sec1 .container .right{
+    position: relative;
+}
+
+.sec1 .container .right img{
+    position: relative;
+    z-index: -999;
+}
+
+.sec1 .container .right::before{
+    content: url(/data/img/rock-floating.png);
+    position: absolute;
+    bottom: 45%;
+    left: 13%;
+    animation: bounce 5s infinite ease-in-out;
+    animation-delay: 0.5s;
+}
+
+.sec1 .container .right::after{
+    content: url(/data/img/rock-floating.png);
+    position: absolute;
+    bottom: 11%;
+    right: 15%;
+    animation: bounce 5s infinite ease-in-out;
+}
+
+@keyframes bounce{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-50px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 1500px){
+    .sec1 .container .left h1{
+        font-size: 6em;
+    }
+}
+
+@media (max-width: 1300px){
+    .sec1 .container{
+        flex-direction: column;
+    }
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .sec1 .right img{
+        margin-top: 50px;
+        width: 90%;
+    }
+    .sec1 .right{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 650px){
+    .sec1 .container .left h1{
+        font-size: 4em;
+    }
+    .sec1 .container .left p{
+        margin: 40px 35px;
+        }
+}
+
+/*SEC2*/
+
+.sec2{
+    margin: 90px 0px;
+}
+
+.sec2 .container{
+    display: flex;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.sec2 .big-card{
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    background-color: #353448;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    animation: shadow 5s infinite ease-in-out;
+}
+
+@keyframes shadow {
+    0%{
+        box-shadow: 0px 0px 45px 25px #fec675;
+    }
+
+    20%{
+        box-shadow: 0px 0px 45px 0px #fec675;
+    }
+
+    40%{
+        box-shadow: 0px 0px 45px 15px #fec675;
+    }
+
+    70%{
+        box-shadow: 0px 0px 45px -10px #fec675;
+    }
+
+    100%{
+        box-shadow: 0px 0px 45px 25px #fec675;
+    }
+}
+
+.sec2 .big-card .arrow::before{
+    position: absolute;
+    content: "\f107";
+    font-family: "FontAwesome";
+    background-color: #fec675;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    color: black;
+}
+
+.sec2 .big-card .left{
+    margin-right: 80px;
+}
+
+.sec2 .big-card .left img{
+    top: -60px;
+    position: relative;
+}
+
+.sec2 .big-card .right{
+    max-width: 500px;
+}
+
+.sec2 .big-card h4{
+    color: #fec675;
+    letter-spacing: 2px;
+}
+
+.sec2 .big-card h1{
+    color: #fff;
+    font-size: 5em;
+    margin-bottom: 30px;
+}
+
+.sec2 .big-card .right p{
+    color: #b1b1b1;
+    line-break: anywhere;
+}
